@@ -1,0 +1,1 @@
+/home/developers/public_html/angular/app/views/posts/index.blade.php

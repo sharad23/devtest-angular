@@ -1,0 +1,54 @@
+<div ng-include="'./packages/templates/sidebar.html'"></div>
+
+<div>
+    <p>{{ user.username }}</p>
+    <div datatable></div>
+    <table>
+        <!--<tr>
+    		<td>Id</td>
+            <td>Amount</td>
+            <td>Description</td>
+            <td>Broker</td>
+            <td></td> 
+    	</tr>
+    	<tr ng-repeat="trans in transactions">
+    	   
+    	    <td>{{ trans.id }}</td>
+            <td>{{ trans.amount }}</td>
+            <td>{{ trans.description }}</td>
+            <td> 
+                 <p ng-repeat="broker in trans.brokers">
+                      {{ broker.broker }}  <a>[-]</a>
+                 </p>
+
+            </td>
+            <td><a ng-click="removeTrans(trans.id)">[-]</a></td>
+           
+    	</tr>-->
+    	<tfoot>
+        
+        <tr>
+            <td></td>
+            <td><input placeholder="Amount" ng-model="newTransaction.amount" style="width: 99%"></td>
+            <td><input placeholder="Description" ng-model="newTransaction.description" style="width: 99%"></td>
+            <td test2 id="test22">
+                 <!--<p>
+                     <input placeholder="Broker" ng-model="newTransaction.brokers[0]" style="width: 99%">
+                     <a>[+]</a>
+                 </p>-->
+                 <a ng-click="addBroker()">[+]</a>
+                 <div ng-repeat="newBroker in newTransaction.brokers track by $index">
+                     <input placeholder="Broker" ng-model="newTransaction.brokers[$index]" style="width: 99%">
+                     <a ng-click="removeNewBroker($index)">[-]</a>
+                 </div>
+            </td>
+            <td><a ng-click="addTrans()">[Save]</a></td>
+
+            {{ error }}
+        </tr>
+
+           
+    </tfoot>
+    </table>
+</div>
+

@@ -1,0 +1,28 @@
+<div ng-include="'./packages/templates/sidebar.html'"></div>
+<div><table>
+	<tr ng-repeat="user in users">
+	   
+	    <td>{{ user.id }}</td>
+        <td>
+            <a ng-click="removeUser(user.id)">[-]</a>
+            <a href="#/user/{{ user.id }}">
+                {{ user.username }} 
+            </a>
+        </td>
+       
+	</tr>
+	<tfoot>
+    <tr>
+        <td></td>
+        <td><input ng-model="newUser.username" style="width: 99%"></td>
+        <td><a ng-click="addUser()">[+]</a></td>
+
+        {{ error }}
+    </tr>
+</tfoot>
+</table>
+</div>
+
+<!--<input type="text" ng-model="exp" />
+<button test1>Click me!!</button>
+-->
